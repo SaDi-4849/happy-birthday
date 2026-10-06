@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>a little something</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain"></div>
+<main id="app">
+
+<section class="screen active" id="welcome">
+  <div class="welcome-wrap">
+    <div class="tiny-mark">✳</div><p class="overline">a small archive</p>
+    <h1>I made<br><em>something</em><br>for you.</h1>
+    <p class="sub">It's not much.<br>But it's yours.</p>
+    <button class="text-button" data-go="menu">open <span>↗</span></button>
+  </div>
+  <div class="corner-note">don't overthink it.</div>
+</section>
+
+<section class="screen" id="menu">
+  <header class="topbar"><span class="brand">for you,</span><span>a small archive</span></header>
+  <div class="menu-wrap">
+    <p class="section-kicker">there are three things here.</p><h2>take your time.</h2>
+    <nav class="menu">
+      <button class="menu-item" data-go="memories"><span>01</span><b>memories</b><i>↗</i></button>
+      <button class="menu-item" data-go="game"><span>02</span><b>game</b><i>↗</i></button>
+      <button class="menu-item" data-go="letter"><span>03</span><b>one last thing</b><i>↗</i></button>
+    </nav>
+  </div>
+  <button class="egg" id="egg">🥚</button>
+  <footer class="menu-footer">made with a suspicious amount of thought.</footer>
+</section>
+
+<section class="screen paper-screen" id="memories">
+<header class="page-head"><button class="back" data-go="menu">← menu</button><div><span>01</span> / memories</div></header>
+<div class="page-title"><p class="section-kicker">this part is yours.</p><h2>Keep the things<br>worth keeping.</h2><p>Write down whatever you want. Nothing here has to be perfect.</p></div>
+<div class="memory-grid">
+  <article class="memory-card"><div class="card-head"><span>01</span><h3>good things that happened</h3></div><div class="entries" data-list="good"></div><button class="add" data-add="good">+ add something</button></article>
+  <article class="memory-card"><div class="card-head"><span>02</span><h3>songs of this year</h3></div><div class="entries" data-list="songs"></div><button class="add" data-add="songs">+ add a song</button></article>
+  <article class="memory-card"><div class="card-head"><span>03</span><h3>things I learned</h3></div><div class="entries" data-list="learned"></div><button class="add" data-add="learned">+ add something</button></article>
+  <article class="memory-card"><div class="card-head"><span>04</span><h3>things I want to remember</h3></div><div class="entries" data-list="remember"></div><button class="add" data-add="remember">+ add something</button></article>
+</div>
+<div class="memory-bottom"><button class="memory-next" data-go="menu">← back to menu</button></div>
+</section>
+
+<section class="screen empty-screen" id="game">
+<button class="back floating-back" data-go="menu">← menu</button>
+<div class="game-code"><span>02 / game</span><div class="code-text">20-8-5 / 13-15-15-14 / 9-19 / 2-5-1-21-20-9-6-21-12 / 9-19-14-20 / 9-20</div></div>
+</section>
+
+<section class="screen letter-screen" id="letter">
+<button class="back floating-back" data-go="menu">← menu</button>
+<div class="letter-wrap">
+<p class="section-kicker">03 / one last thing</p>
+<h2>one last thing.</h2>
+<div class="letter">
+<p>یه چیز دیگه هم هست که دلم می‌خواست بگم.</p>
+<p>واقعاً نمی‌دونم چطور می‌شه ده سال خاطره رو توی چند تا جمله خلاصه کرد. خیلی از خاطره‌هایی که با هم داریم، انقدر قدیمی‌ان که انگار همیشه یه جایی از زندگی‌مون بودن.</p>
+<p>خیلی چیزها توی این سال‌ها تغییر کرده، خودمون هم احتمالاً خیلی فرق کردیم؛ ولی خوشحالم که با وجود همه‌ی این تغییرها، هنوز کلی خاطره و حرف و اتفاق بینمون هست.</p>
+<p>فقط می‌خواستم بدونی که بابت همه‌ی این سال‌ها ممنونم؛<br>برای خاطره‌ها، خنده‌ها، حرف‌های بی‌ربط، اتفاق‌های عجیب و حتی اون لحظه‌های کاملاً مسخره‌ای که شاید همون موقع مهم به نظر نمی‌رسیدن، ولی الان جزو خاطرات قشنگمون شدن.</p>
+<p>امیدوارم سال جدید زندگیت پر از اتفاق‌های خوب، آدم‌های خوب و کلی خاطره‌ی جدید باشه.</p>
+<p>تولدت مبارک :)</p>
+<p>و خب...<br>فکر کنم دیگه حرفی نمونده. :)))</p>
+</div>
+<button class="final-button" id="summaryButton">save everything</button>
+</div>
+</section>
+
+<section class="screen summary-screen" id="summary">
+<button class="back floating-back" data-go="letter">← back</button>
+<div class="summary-wrap">
+<p class="section-kicker">the little archive</p><h2>keep this.</h2>
+<p class="summary-intro">Everything you wrote here, gathered into one little page.</p>
+<div id="summaryPreview" class="summary-preview"></div>
+<div class="summary-actions"><button class="solid-button" id="printPdf">save as PDF</button><button class="outline-button" id="saveTxt">save as text</button></div>
+<p class="save-note">Choose “Save as PDF” in the print window. The layout is designed to look like a small keepsake, not a plain document.</p>
+</div>
+</section>
+</main>
+
+<div class="modal" id="eggModal"><div class="modal-card"><button id="closeEgg">×</button><div>🖕</div><p>خیلی رندوم حیحیحی</p></div></div>
+<script src="script.js"></script>
+</body></html>
